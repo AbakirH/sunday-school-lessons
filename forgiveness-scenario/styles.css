@@ -229,49 +229,91 @@ body::before {
 
 .ending {
     background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    padding: 28px;
+    padding: 32px;
     border-radius: 16px;
     color: white;
     margin-top: 28px;
     box-shadow: 0 8px 24px rgba(240, 147, 251, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .ending h2 {
-    font-size: 1.75rem;
+    font-size: 1.9rem;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.3px;
 }
 
 .ending p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 12px;
-    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    text-align: left;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    padding: 0 8px;
 }
 
 .ending p:last-child {
     margin-bottom: 0;
 }
 
+.ending p strong {
+    font-weight: 700;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
 .ending.positive {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     box-shadow: 0 8px 24px rgba(79, 172, 254, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.25);
 }
 
 .ending.negative {
     background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
     box-shadow: 0 8px 24px rgba(250, 112, 154, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.25);
 }
 
 .ending.reflective {
     background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
     box-shadow: 0 8px 24px rgba(168, 237, 234, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    color: #2d3748;
+}
+
+.ending.reflective h2 {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ending.reflective p {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.ending.reflective p strong {
+    color: #1a202c;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .ending.neutral {
     background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
     box-shadow: 0 8px 24px rgba(210, 153, 194, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    color: #2d3748;
+}
+
+.ending.neutral h2 {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ending.neutral p {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.ending.neutral p strong {
+    color: #1a202c;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 600px) {
