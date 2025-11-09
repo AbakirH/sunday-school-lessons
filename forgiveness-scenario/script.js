@@ -306,6 +306,7 @@ function displayNode(nodeId) {
     const node = storyNodes[nodeId];
     const storyText = document.getElementById('story-text');
     const choicesDiv = document.getElementById('choices');
+    const qrSection = document.getElementById('qr-section');
 
     // Update story text with animation
     storyText.style.opacity = '0';
@@ -327,9 +328,16 @@ function displayNode(nodeId) {
             button.onclick = () => makeChoice(choice.next);
             choicesDiv.appendChild(button);
         });
+        // Hide QR section when there are choices
+        if (qrSection) {
+            qrSection.style.display = 'none';
+        }
     } else {
-        // If no choices, show restart button
+        // If no choices, show restart button and QR section
         document.getElementById('restart-btn').style.display = 'block';
+        if (qrSection) {
+            qrSection.style.display = 'block';
+        }
     }
 
     // Update back button visibility
@@ -366,6 +374,11 @@ function restartStory() {
     history = []; // Clear history
     displayNode(currentNode);
     document.getElementById('restart-btn').style.display = 'none';
+    // Hide QR section when restarting
+    const qrSection = document.getElementById('qr-section');
+    if (qrSection) {
+        qrSection.style.display = 'none';
+    }
 }
 
 // Initialize the story
@@ -373,3 +386,18 @@ displayNode(currentNode);
 
 // Add event listener for back button
 document.getElementById('back-btn').addEventListener('click', goBack);
+
+// Generate QR code for the current page
+window.addEventListener('load', function() {
+    const qrContainer = document.getElementById('qrcode');
+    if (qrContainer && typeof QRCode !== 'undefined') {
+        new QRCode(qrContainer, {
+            text: 'https://abakirh.github.io/sunday-school-lessons/forgiveness-scenario/index.html',
+            width: 200,
+            height: 200,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    }
+});
