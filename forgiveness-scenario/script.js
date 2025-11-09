@@ -2,7 +2,7 @@ const storyNodes = {
     start: {
         text: `
             <p><strong>Monday Morning...</strong></p>
-            <p>You wake up early for another long day of college classes. You're a junior now, but you're still studying for the SATs because you want to get into a very good college.</p>
+            <p>You wake up early for another long day of High School. You're a junior now, but you're still studying for the SATs because you want to get into a very good college.</p>
             <p>Your stomach growls — you need breakfast before your study session.</p>
         `,
         choices: [
