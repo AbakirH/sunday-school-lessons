@@ -300,6 +300,7 @@ const storyNodes = {
 // Current state
 let currentNode = 'start';
 let history = []; // Track the history of visited nodes
+let qrCodeGenerated = false; // Track if QR code has been generated
 
 // Display the current story node
 function displayNode(nodeId) {
@@ -337,6 +338,21 @@ function displayNode(nodeId) {
         document.getElementById('restart-btn').style.display = 'block';
         if (qrSection) {
             qrSection.style.display = 'block';
+            // Generate QR code only once when the section is shown
+            if (!qrCodeGenerated && typeof QRCode !== 'undefined') {
+                const qrContainer = document.getElementById('qrcode');
+                if (qrContainer) {
+                    new QRCode(qrContainer, {
+                        text: 'https://abakirh.github.io/sunday-school-lessons/forgiveness-scenario/index.html',
+                        width: 200,
+                        height: 200,
+                        colorDark: "#000000",
+                        colorLight: "#ffffff",
+                        correctLevel: QRCode.CorrectLevel.H
+                    });
+                    qrCodeGenerated = true;
+                }
+            }
         }
     }
 
@@ -386,18 +402,3 @@ displayNode(currentNode);
 
 // Add event listener for back button
 document.getElementById('back-btn').addEventListener('click', goBack);
-
-// Generate QR code for the current page
-window.addEventListener('load', function() {
-    const qrContainer = document.getElementById('qrcode');
-    if (qrContainer && typeof QRCode !== 'undefined') {
-        new QRCode(qrContainer, {
-            text: 'https://abakirh.github.io/sunday-school-lessons/forgiveness-scenario/index.html',
-            width: 200,
-            height: 200,
-            colorDark: "#000000",
-            colorLight: "#ffffff",
-            correctLevel: QRCode.CorrectLevel.H
-        });
-    }
-});
