@@ -2,7 +2,7 @@ const storyNodes = {
     start: {
         text: `
             <p><strong>Monday Morning...</strong></p>
-            <p>You wake up early for another long day of High School. You're a junior now, but you're still studying for the SATs because you want to get into a very good college.</p>
+            <p>You wake up early for another long day of High School. You're a junior now, and you're studying hard for the SATs because you want to get into a good College.</p>
             <p>Your stomach growls — you need breakfast before your study session.</p>
         `,
         choices: [
@@ -14,8 +14,8 @@ const storyNodes = {
     eatCereal: {
         text: `
             <p>You pour a bowl of cereal and check your notes while you eat. You're focused and ready to start the day.</p>
-            <p>Later, at campus, you sit in the student lounge with your flashcards. A few classmates nearby start laughing.</p>
-            <p>"Still studying for the SATs? Dude, that’s for nerds, do you not know what fun is!" one of them jokes.</p>
+            <p>Later, at school, you sit in the student lounge with your flashcards. A few classmates nearby start laughing.</p>
+            <p>"Still studying for the SATs? Dude, that's for nerds, do you not know what fun is!" one of them jokes.</p>
         `,
         choices: [
             { text: "Ignore them and keep studying", next: "keepStudying" },
